@@ -31,7 +31,7 @@ public final class BlueMapChatMarkers extends JavaPlugin implements Listener {
 	@Override
 	public void onEnable() {
 
-		updateChecker = new UpdateChecker("TechnicJelle", "BlueMapChatMarkers", getDescription().getVersion());
+		updateChecker = new UpdateChecker("Mark-225", "BlueMapVentureChatMarkers", getDescription().getVersion());
 		updateChecker.checkAsync();
 
 		getServer().getPluginManager().registerEvents(this, this);
