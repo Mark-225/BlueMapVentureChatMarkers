@@ -2,7 +2,7 @@
 
 [![GitHub Total Downloads](https://img.shields.io/github/downloads/Mark-225/BlueMapVentureChatMarkers/total?label=Downloads&color=success "Click here to download the plugin")](https://github.com/TechnicJelle/BlueMapChatMarkers/releases/latest)
 
-This Paper plugin adds VentureChat markers to [BlueMap](https://github.com/BlueMap-Minecraft/Bluemap). It is a fork of [BlueMapChatMarkers](https://github.com/TechnicJelle/BlueMapChatMarkers) with the only changes being added support for VentureChat events and a few more config options.
+This Paper plugin adds VentureChat markers to [BlueMap](https://github.com/BlueMap-Minecraft/Bluemap). It is a fork of [BlueMapChatMarkers](https://github.com/TechnicJelle/BlueMapChatMarkers) with the only changes being added support for VentureChat events and a few more config options necessary for this new integration (see default [config.yml](src/main/resources/config.yml) under "VentureChat" for a detailed description).
 
 ![a screenshot of BlueMap with a message displayed on the map](.github/readme_assets/font_size_1.png)
 
