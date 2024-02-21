@@ -4,6 +4,8 @@ import com.technicjelle.MCUtils;
 import org.bukkit.configuration.file.FileConfiguration;
 
 import java.io.IOException;
+import java.util.Collections;
+import java.util.List;
 
 public class Config {
 	public static final String MARKER_SET_ID = "chat-markers";
@@ -15,6 +17,12 @@ public class Config {
 	private final boolean defaultHidden;
 	private final long markerDuration;
 	private final boolean forceful;
+
+	private final boolean includeDefaultChannel;
+
+	private final boolean includeAllChannels;
+
+	private final List<String> exceptions;
 
 	public Config(BlueMapChatMarkers plugin) {
 		this.plugin = plugin;
@@ -34,6 +42,11 @@ public class Config {
 		defaultHidden = configFile().getBoolean("DefaultHidden", false);
 		markerDuration = configFile().getLong("MarkerDuration", 60);
 		forceful = configFile().getBoolean("Forceful", false);
+
+		//Venture specific values
+		includeDefaultChannel = configFile().getBoolean("VentureChat.IncludeDefaultChannel", true);
+		includeAllChannels = configFile().getBoolean("VentureChat.IncludeAllChannels", false);
+		exceptions = configFile().getStringList("VentureChat.Exceptions");
 	}
 
 	private FileConfiguration configFile() {
@@ -58,5 +71,17 @@ public class Config {
 
 	public boolean getForceful() {
 		return forceful;
+	}
+
+	public boolean isIncludeDefaultChannel() {
+		return includeDefaultChannel;
+	}
+
+	public boolean isIncludeAllChannels() {
+		return includeAllChannels;
+	}
+
+	public List<String> getExceptions() {
+		return exceptions;
 	}
 }

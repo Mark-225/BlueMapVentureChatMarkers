@@ -7,6 +7,9 @@ import de.bluecolored.bluemap.api.BlueMapAPI;
 import de.bluecolored.bluemap.api.BlueMapWorld;
 import de.bluecolored.bluemap.api.markers.HtmlMarker;
 import de.bluecolored.bluemap.api.markers.MarkerSet;
+import mineverse.Aust1n46.chat.api.events.VentureChatEvent;
+import mineverse.Aust1n46.chat.channel.ChatChannel;
+import mineverse.Aust1n46.chat.utilities.Format;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -94,6 +97,18 @@ public final class BlueMapChatMarkers extends JavaPlugin implements Listener {
 					() -> markerSet.remove(key),
 					config.getMarkerDuration() * 20L);
 		});
+	}
+
+	@EventHandler(priority = EventPriority.MONITOR)
+	public void onVentureChat(VentureChatEvent event){
+		ChatChannel channel = event.getChannel();
+		if(!(config.isIncludeDefaultChannel() && Boolean.TRUE.equals(channel.isDefaultchannel()) ||
+				config.isIncludeAllChannels() != config.getExceptions().contains(channel.getName()))) return;
+		String message = Format.stripColor(event.getChat());
+
+		//Absolute hack but makes this fork easier to maintain by reusing the existing method instead of reimplementing/altering it
+		AsyncPlayerChatEvent dummyEvent = new AsyncPlayerChatEvent(event.isAsynchronous(), event.getMineverseChatPlayer().getPlayer(), message, event.getRecipients());
+		onPlayerChat(dummyEvent);
 	}
 
 	@Override

@@ -10,3 +10,12 @@ MarkerDuration: 60
 # Set this to `true` if you have other chat management plugins that are cancelling
 # the chat events, before they're able to get picked up by this plugin
 Forceful: false
+
+# VentureChat specific settings
+VentureChat:
+  # Always display the default channel
+  IncludeDefaultChannel: true
+  # Whether or not to display all chat channels by default
+  IncludeAllChannels: false
+  # List of exceptions to the above rule. Expects a list of channel names to allow (if the above is 'false') or block (if the above is 'true')
+  Exceptions: []
