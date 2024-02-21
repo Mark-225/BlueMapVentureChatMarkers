@@ -6,7 +6,7 @@
 
 	<groupId>de.mark225</groupId>
 	<artifactId>BlueMapVentureChatMarkers</artifactId>
-	<version>1.6-ven1.0</version>
+	<version>1.6-ven1.0.1</version>
 	<packaging>jar</packaging>
 
 	<name>BlueMapVentureChatMarkers</name>
