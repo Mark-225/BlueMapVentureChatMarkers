@@ -10,7 +10,6 @@ import de.bluecolored.bluemap.api.markers.MarkerSet;
 import mineverse.Aust1n46.chat.api.events.VentureChatEvent;
 import mineverse.Aust1n46.chat.channel.ChatChannel;
 import mineverse.Aust1n46.chat.utilities.Format;
-import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -31,7 +30,6 @@ public final class BlueMapChatMarkers extends JavaPlugin implements Listener {
 
 	@Override
 	public void onEnable() {
-		new Metrics(this, 16424);
 
 		updateChecker = new UpdateChecker("TechnicJelle", "BlueMapChatMarkers", getDescription().getVersion());
 		updateChecker.checkAsync();

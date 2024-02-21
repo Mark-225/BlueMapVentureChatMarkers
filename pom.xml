@@ -123,12 +123,6 @@
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.bstats</groupId>
-			<artifactId>bstats-bukkit</artifactId>
-			<version>3.0.2</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
 			<groupId>mineverse.Aust1n46.chat</groupId>
 			<artifactId>VentureChat</artifactId>
 			<version>3.7.1</version>
